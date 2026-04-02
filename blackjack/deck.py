@@ -8,7 +8,7 @@ class Deck:
         self.cardsLeft = 52
         
     def dealInf(self) -> Union[str, int]: #w replacement
-        randCard = random.randint(0, 51)
+        randCard = random.randint(0, self.cardsLeft-1) # -1 for 0 indexed arrays
         return self.cards[randCard]
 
     def dealSingle(self) -> Union[str, int]: #w/o replacement
