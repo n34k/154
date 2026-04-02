@@ -1,8 +1,6 @@
-from policies import Play
+from policies import Policies
 
-play = Play()
+play = Policies()
 
-#play.playManual()
-
-print(play.playStandGE17())
+play.playManual()
 

@@ -15,12 +15,8 @@ class Game:
         for _ in range(2):
             self.dealerCards.append(self.deck.dealSingle() if self.singleDeck else self.deck.dealInf())
             self.playerCards.append(self.deck.dealSingle() if self.singleDeck else self.deck.dealInf())
-        self.printHandsOneDealerCard()
 
         self.playerScore.calcScore(self.playerCards)
-        if self.playerScore.score == 21:
-            print("BLACKJACK!")
-            #self.stand()
 
     def dealerHit(self):
         self.dealerCards.append(self.deck.dealSingle() if self.singleDeck else self.deck.dealInf())
@@ -40,8 +36,6 @@ class Game:
 
     def checkScoreAfterHit(self):
         self.playerScore.calcScore(self.playerCards)
-        print("Your Score: " , self.playerScore.score)
-        self.printHandsOneDealerCard()
         if self.playerScore.score > 21:
             return False
         else: 
